@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "qqmP2IPgAq7XjT2aQaJhDKPgpW84owP8khVuwnNJQ2HDVF6ug3bD6Nje6RaRm55B7VJ+jyVNZBXBPwytnOeNgQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\hector.mcewen\\Desktop\\Prog 2\\ToadShootah\\ToadShootah\\ToadShootah.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\hector.mcewen\\.nuget\\packages\\raylib-cs\\6.0.0\\raylib-cs.6.0.0.nupkg.sha512",
+    "C:\\Users\\hector.mcewen\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512"
+  ],
+  "logs": []
+}
