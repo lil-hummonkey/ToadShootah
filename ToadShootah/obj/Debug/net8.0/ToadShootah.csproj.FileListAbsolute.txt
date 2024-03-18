@@ -20,3 +20,4 @@ c:\Users\hector.mcewen\Desktop\Prog 2\ToadShootah\ToadShootah\obj\Debug\net8.0\r
 c:\Users\hector.mcewen\Desktop\Prog 2\ToadShootah\ToadShootah\obj\Debug\net8.0\ToadShootah.pdb
 c:\Users\hector.mcewen\Desktop\Prog 2\ToadShootah\ToadShootah\obj\Debug\net8.0\ToadShootah.genruntimeconfig.cache
 c:\Users\hector.mcewen\Desktop\Prog 2\ToadShootah\ToadShootah\obj\Debug\net8.0\ref\ToadShootah.dll
+c:\Users\hector.mcewen\Desktop\Prog 2\ToadShootah\ToadShootah\obj\Debug\net8.0\ToadShootah.sourcelink.json

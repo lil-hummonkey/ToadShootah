@@ -6,7 +6,7 @@ namespace ToadShootah;
 public class Player : Actors
 {
  World _world;
- Items item;
+ 
  private Vector2 _velocity;
  protected float _speed = 1;
  protected IRenderable _renderer;
@@ -26,7 +26,7 @@ public class Player : Actors
  {
    Move();
 
-   _world.itemsInWorld.ForEach(i => OnCollisionEnter(i));
+   _world.itemsInWorld.ForEach(OnCollisionEnter);
 
    inventory.ForEach(i => i.SetPosition(new(_rect.X, _rect.Y)));
  }
@@ -64,13 +64,14 @@ public void Pickup(Items item)
 {
    inventory.Add(item);
    _world.RemoveFromWorld(item);
-//    item.AttachToPlayer(this);
+    item.AttachToPlayer(this);
 }
 
 public void OnCollisionEnter(GameObjects other) {
     if (other is Items && CollidesWith(other))
     {
         Pickup((Items)other);
+        Console.WriteLine("cum");
     }
 }
 public override void IsAttacking(){}
