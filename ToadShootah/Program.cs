@@ -2,14 +2,10 @@
 global using System.Numerics;
 using ToadShootah;
 
-Raylib.InitWindow(800, 600, "Shootah");
+Raylib.InitWindow(1500, 1000, "Shootah");
 Raylib.SetTargetFPS(60);
 
-
-World world = new();
-
-
-
+World world = new World();
 
 while (!Raylib.WindowShouldClose())
 {
