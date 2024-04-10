@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ToadShootah")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+02afd30bd248edde01c95639040810acc7d7a9d9")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9f8e6435e405dbd80576ba808371a73f3d35417f")]
 [assembly: System.Reflection.AssemblyProductAttribute("ToadShootah")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ToadShootah")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

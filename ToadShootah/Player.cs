@@ -9,7 +9,7 @@ public class Player : Actors
     
 
     private Vector2 _velocity;
-    protected float _speed = 1;
+    
     protected IRenderable _renderer;
 
     public List<Items> bullets = new();
@@ -21,6 +21,8 @@ public class Player : Actors
         _velocity = new Vector2();
         _renderer = renderer;
         _world = world;
+        speed = 1;
+        health = 10;
     }
 
     public override void Update()
@@ -30,6 +32,9 @@ public class Player : Actors
         _world.itemsInWorld.ForEach(OnCollisionEnter);
 
         inventory.ForEach(i => i.SetPosition(new(_rect.X, _rect.Y)));
+
+        
+        foreach (Actors a in _world.actor) if (a is Enemy) ((Enemy)a).SetEnemyPosition(new(_rect.X, _rect.Y));
         
     }
     public override void Move()
@@ -57,8 +62,8 @@ public class Player : Actors
         }
 
 
-        _rect.X += _velocity.X * _speed;
-        _rect.Y += _velocity.Y * _speed;
+        _rect.X += _velocity.X * speed;
+        _rect.Y += _velocity.Y * speed;
 
     }
 
@@ -72,7 +77,6 @@ public class Player : Actors
         }
         if (item is AmmoBox){
         _world.RemoveFromWorld(item);
-            Console.WriteLine("yuh");
 foreach (Items i in inventory) if (i is Gun) ((Gun)i).shotsLeft += 10;
            
            

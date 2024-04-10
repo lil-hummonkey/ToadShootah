@@ -9,7 +9,7 @@ public class AmmoBox : Items
    public AmmoBox(Vector2 pos, IRenderable renderer)
    {
     _renderer = renderer;
-    _rect = _rect = new((int)pos.X, (int)pos.Y, 18,12);
+    _rect = new((int)pos.X, (int)pos.Y, 18,12);
    } 
    public override void Update()
     {
