@@ -1,6 +1,6 @@
 ﻿namespace ToadShootah;
 
-public class Bullet : GameObjects
+public class Bullet : Items
 {
 
 IRenderable _renderer;
@@ -10,10 +10,9 @@ IRenderable _renderer;
      Vector2 speed;
      List<Actors> _actors;
      
-    // public bool killme = false;
     
     //specific instance in bullet class of position/speed is the position/speed of all bullets.
-    //Bullets (circlelol) position is a variable of pos vector 
+    //Bullets position is a variable of pos vector 
     public Bullet(IRenderable renderer, Vector2 pos, Vector2 speed, List<Actors> actors)
     {
         this.pos = pos;
@@ -38,7 +37,7 @@ IRenderable _renderer;
      {
         foreach (GameObjects a in _actors) OnCollisionEnter(a);
      }
-    public void OnCollisionEnter(GameObjects other) {
+    void OnCollisionEnter(GameObjects other) {
         
         
         if (CollidesWith(other) && other is Enemy)

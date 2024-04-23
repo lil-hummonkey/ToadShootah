@@ -10,6 +10,7 @@ public class Gun : Weapons
     float shootCooldownValue;
     public int shotsLeft;
 
+
     public Gun(Vector2 startPos, IPickupable renderer, World world)
     {
         _renderer = renderer;
@@ -26,15 +27,15 @@ public class Gun : Weapons
     Raylib.DrawText($"Bullets:{shotsLeft}", 1400, 10, 20, Color.Black);
 
     }
-    public override void Attack()
-    {
-
-    }
+  
     public override void Draw()
     {
         _renderer.Render(_rect, _origin, angle);
     }
 
+//gun position is picked based on position (which is given in Player.cs as player rect) and the guns position is changed to match said player position
+//angle is decided here using the Arctangent of the adjacent and opposite sides of the triangle between the mouse and player
+//runs ShootBullets() and uses it to decide shootCooldownValue
     public override void SetPosition(Vector2 position)
     {
         _rect.X = position.X + 18;
@@ -46,7 +47,9 @@ public class Gun : Weapons
         shootCooldownValue = ShootBullets(shootCooldownValue, bulletVel, angle, _world);
     }
 
-
+//If the shoot cooldown has ended, you press left mouse click and you have bullets left bulletVel will pick a direction for bullet to travel in
+//AddShotBullet() is in world as each bullet is an object being added to the world in the game
+//resets cooldown and subtracts one bullet from ammo
 
     float ShootBullets(float shootCooldownValue, Vector2 bulletVel, float rotation, World world)
     {
@@ -57,15 +60,11 @@ public class Gun : Weapons
                 bulletVel.Y = (float)Math.Sin(rotation * Raylib.DEG2RAD) * 10;
                 bulletVel.X = (float)Math.Cos(rotation * Raylib.DEG2RAD) * 10;
                 world.AddShotBullet(bulletVel, _rect);
-                CheckBulletsLeft();
+                shotsLeft -= 1;
                 shootCooldownValue = 0.5f;
                 
             }
         }
         return shootCooldownValue;
-    }
-    void CheckBulletsLeft()
-    {
-        if (shotsLeft > 0) shotsLeft -= 1;
     }
 }

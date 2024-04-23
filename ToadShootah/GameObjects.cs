@@ -2,8 +2,6 @@
 
 public abstract class GameObjects
 {
-    public Vector3 Position { get; set; }
-    public Vector3 Size { get; set; }
     protected Rectangle _rect;
 
     public bool CollidesWith(GameObjects other)

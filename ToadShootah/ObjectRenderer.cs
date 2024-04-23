@@ -14,4 +14,5 @@ public class ObjectRenderer : IRenderable
     {
         Raylib.DrawRectangleRec(rect, _color);
     }
+
 }

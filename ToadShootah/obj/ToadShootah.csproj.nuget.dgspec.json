@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\hector.mcewen\\Desktop\\Prog 2\\ToadShootah\\ToadShootah\\ToadShootah.csproj": {}
+    "c:\\Users\\hector.mcewen\\Desktop\\Prog 2\\ToadShootah\\ToadShootah\\ToadShootah.csproj": {}
   },
   "projects": {
-    "C:\\Users\\hector.mcewen\\Desktop\\Prog 2\\ToadShootah\\ToadShootah\\ToadShootah.csproj": {
+    "c:\\Users\\hector.mcewen\\Desktop\\Prog 2\\ToadShootah\\ToadShootah\\ToadShootah.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\hector.mcewen\\Desktop\\Prog 2\\ToadShootah\\ToadShootah\\ToadShootah.csproj",
+        "projectUniqueName": "c:\\Users\\hector.mcewen\\Desktop\\Prog 2\\ToadShootah\\ToadShootah\\ToadShootah.csproj",
         "projectName": "ToadShootah",
-        "projectPath": "C:\\Users\\hector.mcewen\\Desktop\\Prog 2\\ToadShootah\\ToadShootah\\ToadShootah.csproj",
+        "projectPath": "c:\\Users\\hector.mcewen\\Desktop\\Prog 2\\ToadShootah\\ToadShootah\\ToadShootah.csproj",
         "packagesPath": "C:\\Users\\hector.mcewen\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\hector.mcewen\\Desktop\\Prog 2\\ToadShootah\\ToadShootah\\obj\\",
+        "outputPath": "c:\\Users\\hector.mcewen\\Desktop\\Prog 2\\ToadShootah\\ToadShootah\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

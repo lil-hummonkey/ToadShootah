@@ -1,8 +1,6 @@
-﻿
-
-namespace ToadShootah;
-
+﻿namespace ToadShootah;
 public interface IRenderable
 {   
-    public void Render(Rectangle rect);
+    
+    void Render(Rectangle rect);
 }
