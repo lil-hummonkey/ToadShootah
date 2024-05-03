@@ -12,6 +12,10 @@
   </ItemGroup>
 
  <ItemGroup>
- <Content Include="*.png"   CopyToOutputDirectory="Always"/>
-  </ItemGroup> 
+ <Content Include="*.png" CopyToOutputDirectory="Always" />
+  </ItemGroup>
+
+ <ItemGroup>
+   <Folder Include="Start\" />
+ </ItemGroup> 
 </Project>

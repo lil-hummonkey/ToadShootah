@@ -1,5 +1,5 @@
 ﻿namespace ToadShootah;
-public class World
+public class World : Level
 {
     Player _player;
     public List<Items> itemsInWorld = new();
@@ -32,7 +32,7 @@ public class World
 //removes all items in itemsInWorld that are also in itemsToRemove, as well as removes all items within itemsToRemove
 //run updates for all superclasses, as well as running generall methods
 //remove all objects which fill a certain criteria
-    public void Update()
+    public override int Update()
     {
         itemsInWorld.RemoveAll(itemsToRemove.Contains);
         itemsToRemove.Clear();
@@ -42,6 +42,8 @@ public class World
         SpawnEnemy();
         actor.RemoveAll(a => a.health == 0);
         _bullets.RemoveAll(b => b.killme);
+
+        return 1;
     }
 //if the spawntimer is below zero run AddEnemy()
     void SpawnEnemy(){
@@ -56,7 +58,7 @@ public class World
         enemySpawnTime = enemyTimer.Next(5,10);
     }
 //run draw for all superclasses
-    public void Draw()
+    public override void Draw()
     {
          actor.ForEach(a => a.Draw());
         itemsInWorld.ForEach(w => w.Draw());
