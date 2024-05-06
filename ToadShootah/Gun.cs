@@ -8,9 +8,11 @@ public class Gun : Weapons
     Vector2 bulletVel = new Vector2();
     float shootCooldownMax = 0.5f;
     float shootCooldownValue;
-    public int shotsLeft;
+    public int shotsLeft { get; set; }
 
 
+
+//defines important fields as the parameter which fits them
     public Gun(Vector2 startPos, IPickupable renderer, World world)
     {
         _renderer = renderer;

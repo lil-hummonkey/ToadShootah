@@ -8,7 +8,7 @@ public class Player : Actors
     World _world;
     private Vector2 _velocity;
     protected IRenderable _renderer;
-    public List<Items> inventory = new();
+    public List<Items> inventory { get; set; } = new();
     public Player(Vector2 startPos, IRenderable renderer, World world)
     {
         _rect = new((int)startPos.X, (int)startPos.Y, 40, 40);
@@ -61,7 +61,7 @@ public class Player : Actors
     }
 
     //if Item picked up is Weapon, add to inventory list and add to RemoveFromWorld list (which removes item from world)
-    //if Item is AmmoBox, remove from world and add +10 bullets to ammo by searching for Gun in inventory
+    //if Item is AmmoBox and you have a Gun in inventory, remove ammobox from world and add +10 bullets to ammo by searching for Gun in inventory
     public void Pickup(Items item)
     {
         if (item is Weapons)
@@ -69,9 +69,15 @@ public class Player : Actors
         inventory.Add(item);
         _world.RemoveFromWorld(item);
         }
-        if (item is AmmoBox){
-        _world.RemoveFromWorld(item);
-        foreach (Items i in inventory) if (i is Gun) ((Gun)i).shotsLeft += 10;
+        if (item is AmmoBox)
+        {
+            foreach (Items i in inventory) if (i is Gun)
+            {
+            if(inventory.Contains((Gun)i)){
+             _world.RemoveFromWorld(item);
+            ((Gun)i).shotsLeft += 10;
+                }
+            }
         }
     }
 
@@ -89,12 +95,18 @@ public class Player : Actors
           ((Enemy)other).RunCollision();
         }   
     }
+
+
     public override void IsAttacking() { }
+
+    //runs health code, where each time its run you lose 1 health
     public override void Hurt() 
     {
         health -= 1;
         Console.WriteLine($"{health}");
     }
+
+    //Draws out rect (player) using renderer from IRenderable, inventory.Where draws out all items which have DrawWhenCarried as true
     public override void Draw()
     {
         _renderer.Render(_rect);

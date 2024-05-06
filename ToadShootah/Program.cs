@@ -6,6 +6,7 @@ Raylib.InitWindow(1500, 1000, "Shootah");
 Raylib.SetTargetFPS(60);
 LevelHandler levels = new LevelHandler();
 
+//runs main code through levels.Run()
 while (!Raylib.WindowShouldClose())
 {
     Raylib.BeginDrawing();

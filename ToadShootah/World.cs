@@ -2,8 +2,8 @@
 public class World : Level
 {
     Player _player;
-    public List<Items> itemsInWorld = new();
-    public List<Actors> actor = new();
+    public List<Items> itemsInWorld { get; set; } = new();
+    public List<Actors> actor { get; set; } = new();
     private List<Items> itemsToRemove = new();
     ObjectRenderer AmmoBoxObjRend = new(Color.DarkBlue), BlackObjRend = new(Color.Black), EnemyObjRend = new(Color.Red);
     WeaponRenderer RotatingObjRend = new(Color.Black);
@@ -32,6 +32,7 @@ public class World : Level
 //removes all items in itemsInWorld that are also in itemsToRemove, as well as removes all items within itemsToRemove
 //run updates for all superclasses, as well as running generall methods
 //remove all objects which fill a certain criteria
+//returns 1 to keep scene on world
     public override int Update()
     {
         itemsInWorld.RemoveAll(itemsToRemove.Contains);

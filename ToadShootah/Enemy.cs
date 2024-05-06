@@ -25,13 +25,14 @@ public class Enemy : Actors
         foreach (Bullet b in _bullets) OnCollisionEnter(b);
     }
 
-//runs OnCollision eneter for all actors
+//runs OnCollision enter for all actors
     public void RunCollision()
     {
         foreach (Actors a in _actors) OnCollisionEnter(a);
     }
 
-  //0
+  //If a collision happens between bullet and an enemy Hurt() will run, as well as RunCollision() within bullet (which removes bullet right after)
+  //RunCollision() runs if a player is hit by an enemy, wherein the second if is run and the enemy dies instantaniously upon collision with player
  private void OnCollisionEnter(GameObjects other) {
         if (other is Bullet && CollidesWith(other))
         {
@@ -45,20 +46,28 @@ public class Enemy : Actors
     }   
 
   public override void IsAttacking(){}
+
+  //moves player using speed as movement speed variable and dir as location vector
   public override void Move()
   {
       dir = Vector2.Normalize(dir);
       _rect.X += dir.X*speed;
       _rect.Y += dir.Y*speed;      
   }
+
+    //runs health code, where each time its run enemy loses 1 health
   public override void Hurt(){
   health -= damage; 
   Console.WriteLine($"{health}");
   }
+
+  //draws out rect (enemy)
   public override void Draw()
     {
         _renderer.Render(_rect);
     }
+
+//makes dir vector be a differens between player position and enemy position (enemy moves toward player)
      public void SetEnemyPosition(Vector2 position)
      {
         dir.X = position.X - _rect.X;

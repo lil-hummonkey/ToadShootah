@@ -2,6 +2,7 @@
 
 namespace ToadShootah;
 
+//Handles rendering of all objects without special property
 public class ObjectRenderer : IRenderable
 {
     protected Color _color;

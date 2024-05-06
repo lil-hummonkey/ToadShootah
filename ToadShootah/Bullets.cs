@@ -5,7 +5,7 @@ public class Bullet : Items
 
 IRenderable _renderer;
 
-    public bool killme = false;
+     public bool killme { get; set; } = false;
      Vector2 pos;
      Vector2 speed;
      List<Actors> _actors;
@@ -33,10 +33,13 @@ IRenderable _renderer;
         
     }
 
+    //if a collision happens with an actor run RunCollision()
      public void RunCollision()
      {
         foreach (GameObjects a in _actors) OnCollisionEnter(a);
      }
+
+     //if collision with enemy is true, bullet will be removed (as killme is set true)
     void OnCollisionEnter(GameObjects other) {
         
         

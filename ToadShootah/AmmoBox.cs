@@ -1,5 +1,6 @@
 ﻿namespace ToadShootah;
 
+//Fills functions of an ammo box
 public class AmmoBox : Items
 {
     protected IRenderable _renderer;

@@ -1,5 +1,7 @@
 ﻿namespace ToadShootah;
 
+
+//Renders objects with a rotation, i.e weapons
 public class WeaponRenderer : IPickupable 
 {
     protected Color _color;
