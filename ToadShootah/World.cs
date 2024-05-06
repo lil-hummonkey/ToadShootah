@@ -41,7 +41,7 @@ public class World : Level
         _weapons.ForEach(w => w.Update());
         _bullets.ForEach(b => b.Update());
         SpawnEnemy();
-        actor.RemoveAll(a => a.health == 0);
+        actor.RemoveAll(a => a.Health == 0);
         _bullets.RemoveAll(b => b.killme);
 
         return 1;

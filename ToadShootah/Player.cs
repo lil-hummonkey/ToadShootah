@@ -15,8 +15,8 @@ public class Player : Actors
         _velocity = new Vector2();
         _renderer = renderer;
         _world = world;
-        speed = 1;
-        health = 3;
+        Speed = 1;
+        Health = 3;
     }
 
     //Runs OnCollisionEnter for every item in list itemsInWorld (i.e. every item in currently lying around in world)
@@ -32,7 +32,7 @@ public class Player : Actors
         OnCollisionEnter(a);
         if (a is Enemy) ((Enemy)a).SetEnemyPosition(new(_rect.X, _rect.Y)); 
         }
-        Raylib.DrawText($"Health:{health}", 1400, 35, 20, Color.Black);
+        Raylib.DrawText($"Health:{Health}", 1400, 35, 20, Color.Black);
     }
 
     //changes velocity based on if player presses WASD, making WASD movement controller
@@ -56,8 +56,8 @@ public class Player : Actors
         {
             _velocity.Y = -5;
         }
-        _rect.X += _velocity.X * speed;
-        _rect.Y += _velocity.Y * speed;
+        _rect.X += _velocity.X * Speed;
+        _rect.Y += _velocity.Y * Speed;
     }
 
     //if Item picked up is Weapon, add to inventory list and add to RemoveFromWorld list (which removes item from world)
@@ -102,8 +102,8 @@ public class Player : Actors
     //runs health code, where each time its run you lose 1 health
     public override void Hurt() 
     {
-        health -= 1;
-        Console.WriteLine($"{health}");
+        Health -= 1;
+        Console.WriteLine($"{Health}");
     }
 
     //Draws out rect (player) using renderer from IRenderable, inventory.Where draws out all items which have DrawWhenCarried as true

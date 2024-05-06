@@ -11,11 +11,11 @@ public class Enemy : Actors
     public Enemy(Vector2 pos, IRenderable renderer, List<Actors> actors, List<Bullet> bullets)
     {
         _rect = new(pos.X, pos.Y, 20, 20);
-        speed = 4;
+        Speed = 4;
         _renderer = renderer;
         _actors = actors;
         _bullets = bullets;
-        health = 2;
+        Health = 2;
     }
 
 //Runs OnCollisionEnter for all bullets
@@ -41,7 +41,7 @@ public class Enemy : Actors
         }   
           if (CollidesWith(other) && other is Player)
         { 
-         health -= 2;
+         Health -= 2;
         }
     }   
 
@@ -51,14 +51,14 @@ public class Enemy : Actors
   public override void Move()
   {
       dir = Vector2.Normalize(dir);
-      _rect.X += dir.X*speed;
-      _rect.Y += dir.Y*speed;      
+      _rect.X += dir.X*Speed;
+      _rect.Y += dir.Y*Speed;      
   }
 
     //runs health code, where each time its run enemy loses 1 health
   public override void Hurt(){
-  health -= damage; 
-  Console.WriteLine($"{health}");
+  Health -= damage; 
+  Console.WriteLine($"{Health}");
   }
 
   //draws out rect (enemy)
